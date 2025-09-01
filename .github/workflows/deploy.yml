@@ -34,7 +34,7 @@ jobs:
         run: |
           # Set the base path for your repository name
           export VITE_BASE_PATH="/$(basename $GITHUB_REPOSITORY)/"
-          npx vite build --mode production --base="/$(basename $GITHUB_REPOSITORY)/" client --outDir client/dist
+          npx vite build --mode production --base="/$(basename $GITHUB_REPOSITORY)/"
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -42,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './client/dist'
+          path: './dist/public'
 
   deploy:
     environment:
